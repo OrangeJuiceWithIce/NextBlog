@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border-radius: 0.25rem;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 选中状态 */
+.listItem[data-selected="true"] {
+  background: #f0f0f0;
+  border-color: #000;
+}
+
+/* 标题文本处理 */
+.listItem > div:first-child {
+  flex: 1;
+  min-width: 0; /* 允许文本截断 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 1rem;
+}
+
+/* 悬停交互 */
+.listItem:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.listItem:hover:not([data-selected="true"]) {
+  background: #f8f8f8;
+}
+
+/* 删除按钮容器 */
+.listItem > div:last-child {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.listItem:hover > div:last-child {
+  opacity: 1;
+}
+
+.container:empty::after {
+  content: "No posts found";
+  display: block;
+  text-align: center;
+  color: #666;
+  padding: 1rem;
+}

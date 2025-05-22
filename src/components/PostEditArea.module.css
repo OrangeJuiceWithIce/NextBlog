@@ -1,0 +1,59 @@
+/* styles.module.css */
+.editForm {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.titleInput {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.contentInput {
+  min-height: 400px;
+  width:100%;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.saveButton {
+  align-self: flex-end;
+  padding: 0.8rem 2rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.saveButton:hover {
+  background: #2563eb;
+}
+
+.saveButton:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ef4444;
+  padding: 1rem;
+  background: #fee2e2;
+  border-radius: 4px;
+}
+
+.placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: #64748b;
+}
