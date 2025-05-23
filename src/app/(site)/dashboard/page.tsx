@@ -7,17 +7,18 @@ import { deleteSession } from '@/lib/session'
 import { Suspense } from 'react'
 
 import styles from './styles.module.css'
+import { logout } from '@/app/action/auth'
 
 async function UserInfo(){
     const result = await verifySession()
     if(!result.isAuth||!result.userId){
         redirect('/auth/login');
     }
+
     const user=await prisma.user.findUnique({
         where:{id:result.userId},
     });
     if(!user){
-        deleteSession();
         redirect('/auth/login');
     }
 
